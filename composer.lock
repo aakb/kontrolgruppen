@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a4e5918f4caf84a35cc4e4c89ef9a9d",
+    "content-hash": "46d1220faee1b96fd44c1b8abe1b7d45",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1860,10 +1860,16 @@
         {
             "name": "kontrolgruppen/core-bundle",
             "version": "dev-feature/skeleton",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aakb/kontrolgruppen-core-bundle.git",
+                "reference": "cfefc231f7afb24fc67dedc5356239172d655a94"
+            },
             "dist": {
-                "type": "path",
-                "url": "bundles/kontrolgruppen-core-bundle",
-                "reference": "f51e7d37da5c824ab8c1ec49857154e9efc30035"
+                "type": "zip",
+                "url": "https://api.github.com/repos/aakb/kontrolgruppen-core-bundle/zipball/cfefc231f7afb24fc67dedc5356239172d655a94",
+                "reference": "cfefc231f7afb24fc67dedc5356239172d655a94",
+                "shasum": ""
             },
             "require": {
                 "ext-ctype": "*",
@@ -1970,9 +1976,10 @@
                 }
             },
             "description": "Kontrolgruppen core bundle",
-            "transport-options": {
-                "symlink": true
-            }
+            "support": {
+                "source": "https://github.com/aakb/kontrolgruppen-core-bundle/tree/feature/skeleton"
+            },
+            "time": "2019-06-12T13:37:10+00:00"
         },
         {
             "name": "lexik/form-filter-bundle",

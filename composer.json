@@ -25,11 +25,8 @@
     },
     "repositories": {
         "kontrolgruppen/core-bundle": {
-            "type": "path",
-            "url": "bundles/kontrolgruppen-core-bundle",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "https://github.com/aakb/kontrolgruppen-core-bundle"
         }
     },
     "config": {
