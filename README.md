@@ -1,5 +1,16 @@
 # Kontrolgruppen
 
+## Creating a new “Kontrolgruppen” project
+
+```
+composer create-project  --repository='{"type":"vcs","url":"https://github.com/aakb/kontrolgruppen"}' kontrolgruppen/main kontrolgruppen-skeleton
+cd kontrolgruppen-skeleton
+docker-compose pull
+docker-compose up --detach
+docker-compose exec phpfpm bin/console doctrine:migrations:migrate --no-interaction
+echo "http://0.0.0.0:$(docker-compose port nginx 80 | cut -d: -f2)"
+```
+
 ## Install
 
 ### Check out submodules
