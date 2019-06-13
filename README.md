@@ -9,6 +9,9 @@ docker-compose pull
 docker-compose up --detach
 docker-compose exec phpfpm bin/console doctrine:migrations:diff
 docker-compose exec phpfpm bin/console doctrine:migrations:migrate --no-interaction
+docker-compose exec -T mariadb mysql --user=db --password=db db <<< "INSERT INTO fos_user(username, username_canonical, email, email_canonical, password, enabled, roles) VALUES ('super-admin', 'super-admin', 'super-admin@example.com', 'super-admin@example.com', 'password', 1, '[]')"
+yarn install
+yarn build
 echo "http://0.0.0.0:$(docker-compose port nginx 80 | cut -d: -f2)"
 ```
 
