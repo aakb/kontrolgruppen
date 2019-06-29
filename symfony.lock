@@ -189,6 +189,12 @@
     "lexik/form-filter-bundle": {
         "version": "v5.0.8"
     },
+    "markbaker/complex": {
+        "version": "1.4.7"
+    },
+    "markbaker/matrix": {
+        "version": "1.1.4"
+    },
     "microsoft/tolerant-php-parser": {
         "version": "v0.0.17"
     },
@@ -221,6 +227,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpoffice/phpspreadsheet": {
+        "version": "1.7.0"
     },
     "pimple/pimple": {
         "version": "3.2.x-dev"
