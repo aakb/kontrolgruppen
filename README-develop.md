@@ -27,10 +27,22 @@ composer install
 # Migrate database.
 # If using docker these bin/console commands should be run from inside the phpfpm container.
 docker-compose exec phpfpm /app/bin/console doctrine:migrations:migrate
-
-# Create super admin user.
-docker-compose exec phpfpm /app/bin/console fos:user:create --super-admin
 ```
+
+## Create new admin user
+
+```sh
+#
+$(itkdev-docker-compose sql:connect)
+insert into user (username, roles) values ("admin", '["ROLE_ADMIN"]');
+```
+
+## Create loginurl
+```sh
+docker-compose exec phpfpm /app/bin/console kontrolgruppen:user:login admin
+# You sould only use the part of the url from /cli-login?... and forward in combination with the domain/port you are curently running. Fx. http://kontrolgruppen.docker.localhost:XXXXX/cli-login?cli-login-token=XXXXXXXXXXXX.XXXXXXXX
+```
+
 
 ## Use maker bundle
 
