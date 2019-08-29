@@ -32,17 +32,27 @@ docker-compose exec phpfpm /app/bin/console doctrine:migrations:migrate
 ## Create new admin user
 
 ```sh
-#
-$(itkdev-docker-compose sql:connect)
-insert into user (username, roles) values ("admin", '["ROLE_ADMIN"]');
+$(itkdev-docker-compose sql:connect) <<< 'insert into user (username, roles) values ("admin", "[\"ROLE_ADMIN\"]");'
 ```
 
 ## Create loginurl
+
+Create `.env.local` and edit the lines 
+
 ```sh
-docker-compose exec phpfpm /app/bin/console kontrolgruppen:user:login admin
-# You sould only use the part of the url from /cli-login?... and forward in combination with the domain/port you are curently running. Fx. http://kontrolgruppen.docker.localhost:XXXXX/cli-login?cli-login-token=XXXXXXXXXXXX.XXXXXXXX
+ROUTER_REQUEST_CONTEXT_HOST=localhost
+ROUTER_REQUEST_CONTEXT_SCHEME=http
+# Optional (must start with a slash)
+#ROUTER_REQUEST_CONTEXT_BASE_URL=/some-path
 ```
 
+to match your actual setup.
+
+Create a login url:
+
+```sh
+docker-compose exec phpfpm bin/console kontrolgruppen:user:login admin
+```
 
 ## Use maker bundle
 
